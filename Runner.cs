@@ -9,9 +9,6 @@ public class Runner : MonoBehaviour {
 	float mouseY = 0; 
 
 
-	// note starter code for tutorial from
-	// http://catlikecoding.com/unity/tutorials/runner/
-
 	
 	// Update is called once per frame
 	void Update () {
