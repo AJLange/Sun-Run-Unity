@@ -5,6 +5,7 @@ public class HillScript : MonoBehaviour {
 
 	public Vector2 speed = new Vector2(5, 0);
 	private Vector2 movement;
+	public string scene;
 	
 	// Use this for initialization
 	void Start () {
@@ -28,7 +29,7 @@ public class HillScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Player") {
-			Debug.Break ();
+			EndGame();
 			return;
 		}
 		
@@ -36,6 +37,10 @@ public class HillScript : MonoBehaviour {
 						Destroy (gameObject);
 				} else
 						return;
+	}
+
+	void EndGame(){
+		Application.LoadLevel (scene);
 	}
 }
 

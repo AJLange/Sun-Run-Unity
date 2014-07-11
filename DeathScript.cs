@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DeathScript : MonoBehaviour {
 
+
+public class DeathScript : MonoBehaviour {
+	public string scene;
 	// Use this for initialization
 	void Start () {
 	
@@ -16,7 +18,7 @@ public class DeathScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 				if (other.tag == "Player") {
-				Debug.Break ();
+				EndGame();
 				return;
 				}
 
@@ -28,5 +30,9 @@ public class DeathScript : MonoBehaviour {
 		{
 			Destroy (other.gameObject);
 		}
+	}
+
+	void EndGame(){
+		Application.LoadLevel (scene);
 	}
 }
